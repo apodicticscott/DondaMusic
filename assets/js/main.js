@@ -35,11 +35,10 @@ const setMusic = (i) => {
     disk.style.backgroundImage = `url('${song.cover}')`;
 
     currentTime.innerHTML = '00:00';
-    setTimeout(() => {
+    music.addEventListener('loadeddata', () => {
         seekBar.max = music.duration;
         musicDuration.innerHTML = formatTime(music.duration);
-        console.log(music.duration);
-    }, 300);
+  })
 }
 
 setMusic(0);
